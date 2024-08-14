@@ -54,28 +54,10 @@
 				</tr>
 				<tr>
 					<td style="width: 150px">
-						<b>Alamat</b>
-					</td>
-					<td>:
-						<?php echo $data_cek['desa']; ?>, RT
-						<?php echo $data_cek['rt']; ?>/ RW
-						<?php echo $data_cek['rw']; ?>
-					</td>
-				</tr>
-				<tr>
-					<td style="width: 150px">
 						<b>Agama</b>
 					</td>
 					<td>:
 						<?php echo $data_cek['agama']; ?>
-					</td>
-				</tr>
-				<tr>
-					<td style="width: 150px">
-						<b>Status Kawin</b>
-					</td>
-					<td>:
-						<?php echo $data_cek['kawin']; ?>
 					</td>
 				</tr>
 				<tr>

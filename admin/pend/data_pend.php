@@ -18,7 +18,6 @@
 						<th>NIK</th>
 						<th>Nama</th>
 						<th>JK</th>
-						<th>Alamat</th>
 						<th>No KK</th>
 						<th>Aksi</th>
 					</tr>
@@ -27,9 +26,12 @@
 
 					<?php
               $no = 1;
-			  $sql = $koneksi->query("SELECT p.id_pend, p.nik, p.nama, p.jekel, p.desa, p.rt, p.rw, a.id_kk, k.no_kk, k.kepala from 
-			  tb_pdd p left join tb_anggota a on p.id_pend=a.id_pend 
-			  left join tb_kk k on a.id_kk=k.id_kk where status='Ada'");
+			  $sql = $koneksi->query("
+				SELECT DISTINCT p.id_pend, p.nik, p.nama, p.jekel, k.no_kk, k.kepala 
+				FROM tb_pdd p 
+				LEFT JOIN tb_anggota a ON p.id_pend = a.id_pend 
+				LEFT JOIN tb_kk k ON a.id_kk = k.id_kk
+			");
               while ($data= $sql->fetch_assoc()) {
             ?>
 
@@ -45,12 +47,6 @@
 						</td>
 						<td>
 							<?php echo $data['jekel']; ?>
-						</td>
-						<td>
-							<?php echo $data['desa']; ?>
-							RT
-							<?php echo $data['rt']; ?>/ RW
-							<?php echo $data['rw']; ?>.
 						</td>
 						<td>
 							<?php echo $data['no_kk']; ?>-

@@ -58,33 +58,13 @@
 						<option value="">-- Pilih jekel --</option>
 						<?php
                 //menhecek data yg dipilih sebelumnya
-                if ($data_cek['jekel'] == "LK") echo "<option value='LK' selected>LK</option>";
-                else echo "<option value='LK'>LK</option>";
+                if ($data_cek['jekel'] == "Laki-Laki") echo "<option value='Laki-Laki' selected>LK</option>";
+                else echo "<option value='Laki-Laki'>Laki-Laki</option>";
 
-                if ($data_cek['jekel'] == "PR") echo "<option value='PR' selected>PR</option>";
-                else echo "<option value='PR'>PR</option>";
+                if ($data_cek['jekel'] == "Perempuan") echo "<option value='Perempuan' selected>Perempuan</option>";
+                else echo "<option value='Perempuan'>Perempuan</option>";
             ?>
 					</select>
-				</div>
-			</div>
-
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Desa</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="desa" name="desa" value="<?php echo $data_cek['desa']; ?>"
-					/>
-				</div>
-			</div>
-
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">RT/RW</label>
-				<div class="col-sm-3">
-					<input type="text" class="form-control" id="rt" name="rt" value="<?php echo $data_cek['rt']; ?>"
-					/>
-				</div>
-				<div class="col-sm-3">
-					<input type="text" class="form-control" id="rw" name="rw" value="<?php echo $data_cek['rw']; ?>"
-					/>
 				</div>
 			</div>
 
@@ -96,28 +76,6 @@
 				</div>
 			</div>
 
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Status Perkawinan</label>
-				<div class="col-sm-3">
-					<select name="kawin" id="kawin" class="form-control">
-						<option value="">-- Pilih Status --</option>
-						<?php
-                //menhecek data yg dipilih sebelumnya
-                if ($data_cek['kawin'] == "Sudah") echo "<option value='Sudah' selected>Sudah</option>";
-                else echo "<option value='Sudah'>Sudah</option>";
-
-                if ($data_cek['kawin'] == "Belum") echo "<option value='Belum' selected>Belum</option>";
-				else echo "<option value='Belum'>Belum</option>";
-				
-				if ($data_cek['kawin'] == "Cerai Mati") echo "<option value='Cerai Mati' selected>Cerai Mati</option>";
-                else echo "<option value='Cerai Mati'>Cerai Mati</option>";
-
-                if ($data_cek['kawin'] == "Cerai Hidup") echo "<option value='Cerai Hidup' selected>Cerai Hidup</option>";
-                else echo "<option value='Cerai Hidup'>Cerai Hidup</option>";
-            ?>
-					</select>
-				</div>
-			</div>
 
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">Pekerjaan</label>
@@ -144,11 +102,7 @@
 		tempat_lh='".$_POST['tempat_lh']."',
 		tgl_lh='".$_POST['tgl_lh']."',
 		jekel='".$_POST['jekel']."',
-		desa='".$_POST['desa']."',
-		rt='".$_POST['rt']."',
-		rw='".$_POST['rw']."',
 		agama='".$_POST['agama']."',
-		kawin='".$_POST['kawin']."',
 		pekerjaan='".$_POST['pekerjaan']."'
 		WHERE id_pend='".$_POST['id_pend']."'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);

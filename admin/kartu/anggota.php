@@ -23,7 +23,7 @@
 			 readonly/>
 
 			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">No KK | KPl Keluarga</label>
+				<label class="col-sm-2 col-form-label">No KK | Kepala Keluarga</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="no_kk" name="no_kk" value="<?php echo $data_cek['no_kk']; ?>"
 					 readonly/>
@@ -49,7 +49,7 @@
 						<option selected="selected">- Penduduk -</option>
 						<?php
                         // ambil data dari database
-                        $query = "select * from tb_pdd where status='Ada'";
+                        $query = "select * from tb_pdd";
                         $hasil = mysqli_query($koneksi, $query);
                         while ($row = mysqli_fetch_array($hasil)) {
                         ?>
@@ -95,8 +95,14 @@
 
 							<?php
               $no = 1;
-			  $sql = $koneksi->query("SELECT p.nik, p.nama, p.jekel, a.hubungan, a.id_anggota 
-			  from tb_pdd p inner join tb_anggota a on p.id_pend=a.id_pend where status='Ada' and id_kk=$karkel");
+					$sql = $koneksi->query("
+					SELECT p.nik, p.nama, p.jekel, a.hubungan, a.id_anggota 
+					FROM tb_pdd p 
+					INNER JOIN tb_anggota a ON p.id_pend = a.id_pend 
+					WHERE a.id_kk = '$karkel'
+					GROUP BY p.id_pend, a.id_kk
+				");
+		  
               while ($data= $sql->fetch_assoc()) {
             ?>
 

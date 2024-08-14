@@ -35,48 +35,29 @@
 				<div class="col-sm-3">
 					<select name="jekel" id="jekel" class="form-control">
 						<option>- Pilih -</option>
-						<option>LK</option>
-						<option>PR</option>
+						<option>Laki-Laki</option>
+						<option>Perempuan</option>
 					</select>
 				</div>
 			</div>
 
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Desa</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="desa" name="desa" placeholder="Desa" required>
-				</div>
-			</div>
-
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">RT/RW</label>
-				<div class="col-sm-3">
-					<input type="text" class="form-control" id="rt" name="rt" placeholder="RT" required>
-				</div>
-				<div class="col-sm-3">
-					<input type="text" class="form-control" id="rw" name="rw" placeholder="RW" required>
-				</div>
-			</div>
+			
 
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">Agama</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" id="agama" name="agama" placeholder="Agama" required>
-				</div>
-			</div>
-
-			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">Status Perkawinan</label>
-				<div class="col-sm-3">
-					<select name="kawin" id="kawin" class="form-control">
-						<option>- Pilih -</option>
-						<option>Sudah</option>
-						<option>Belum</option>
-						<option>Cerai Mati</option>
-						<option>Cerai Hidup</option>
+					<select name="agama" id="agama" class="form-control" required>
+						<option disabled selected>- Pilih Agama -</option>
+						<option>Islam</option>
+						<option>Kristen</option>
+						<option>Katolik</option>
+						<option>Hindu</option>
+						<option>Buddha</option>
+						<option>Konghucu</option>
 					</select>
 				</div>
 			</div>
+
 
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">Pekerjaan</label>
@@ -97,19 +78,15 @@
 
     if (isset ($_POST['Simpan'])){
     //mulai proses simpan data
-        $sql_simpan = "INSERT INTO tb_pdd (nik, nama, tempat_lh, tgl_lh, jekel, desa, rt, rw, agama, kawin, pekerjaan, status) VALUES (
+        $sql_simpan = "INSERT INTO tb_pdd (nik, nama, tempat_lh, tgl_lh, jekel, agama, pekerjaan) VALUES (
             '".$_POST['nik']."',
             '".$_POST['nama']."',
 			'".$_POST['tempat_lh']."',
 			'".$_POST['tgl_lh']."',
             '".$_POST['jekel']."',
-            '".$_POST['desa']."',
-			'".$_POST['rt']."',
-			'".$_POST['rw']."',
 			'".$_POST['agama']."',
-			'".$_POST['kawin']."',
-			'".$_POST['pekerjaan']."',
-            'Ada')";
+			'".$_POST['pekerjaan']."'
+            )";
         $query_simpan = mysqli_query($koneksi, $sql_simpan);
         mysqli_close($koneksi);
 
