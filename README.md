@@ -1,8 +1,9 @@
-# [SISTEM DATA KEPENDUDUKAN DESA TAMANTIRTO]
-**Sistem Data Kependudukan (SIDAK)** merupakan Sistem Administrasi Kependudukan yang dikelola oleh badan pemerintahan Desa Tamantirto
+# [SISTEM DATA KEPENDUDUKAN DESA NGANJAT]
+**Sistem Data Kependudukan (SIDAK)** merupakan Sistem Administrasi Kependudukan yang dikelola oleh badan pemerintahan Desa Nganjat
 
 # Pembuat Aplikasi Website
-**BAGUS BUDI SATOTO** Selaku Pembuat Aplikasi Web Sistem Data Kependudukan 
+**BAGUS BUDI SATOTO** Selaku Pembuat Aplikasi Web Sistem Data Kependudukan
+Dikembangkan oleh Dhima Alif Prabowo
 Dibuat Oleh https://github.com/bagussatoto Selaku Enginnering Web dan Mobile.
 
 
